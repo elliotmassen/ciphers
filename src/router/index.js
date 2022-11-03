@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Ciphers from '../components/Ciphers.vue'
 import Caeser from '../components/Caeser.vue'
+import Atbash from '../components/Atbash.vue'
 import Vigenère from '../components/Vigenère.vue'
 
 Vue.use(VueRouter)
@@ -16,6 +17,12 @@ const routes = [
         path: '/vigenere',
         name: 'Vigenère',
         component: Vigenère
+      },
+      {
+        path: '/atbash',
+        name: 'Atbash',
+        component: Atbash,
+        alias: 'atbash'
       },
       {
         path: '/*',

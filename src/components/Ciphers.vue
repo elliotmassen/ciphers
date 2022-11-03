@@ -8,6 +8,7 @@
       <ul>
         <li><router-link to="/caeser">Caeser</router-link></li>
         <li><router-link to="/vigenere">Vigenère</router-link></li>
+        <li><router-link to="/atbash">Atbash</router-link></li>
       </ul>
     </nav>
 
