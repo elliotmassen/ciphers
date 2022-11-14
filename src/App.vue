@@ -3,7 +3,7 @@
     <router-view></router-view>
 
     <footer>
-      2021 © <a href="https://elliotmassen.com/">Elliot Massen</a>
+      2021 - 2022 © <a href="https://elliotmassen.com/">Elliot Massen</a>
     </footer>
   </div>
 </template>
