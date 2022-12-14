@@ -1,43 +1,32 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Ciphers from '../components/Ciphers.vue'
-import Caeser from '../components/Caeser.vue'
-import Atbash from '../components/Atbash.vue'
-import Vigenère from '../components/Vigenère.vue'
+import { createRouter, createWebHistory } from "vue-router";
 
-Vue.use(VueRouter)
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      name: "Home",
+      component: () => import("../components/CiphersIndex.vue"),
+      children: [
+        {
+          path: "/vigenere",
+          name: "Vigenère",
+          component: () => import("../components/VigenèreCipher.vue"),
+        },
+        {
+          path: "/atbash",
+          name: "Atbash",
+          component: () => import("../components/AtbashCipher.vue"),
+        },
+        {
+          path: "",
+          name: "Caeser",
+          component: () => import("../components/CaeserCipher.vue"),
+          alias: "caeser",
+        },
+      ],
+    },
+  ],
+});
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Ciphers,
-    children: [
-      {
-        path: '/vigenere',
-        name: 'Vigenère',
-        component: Vigenère
-      },
-      {
-        path: '/atbash',
-        name: 'Atbash',
-        component: Atbash,
-        alias: 'atbash'
-      },
-      {
-        path: '/*',
-        name: 'Caeser',
-        component: Caeser,
-        alias: 'caeser'
-      }
-    ]
-  }
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-export default router
+export default router;
