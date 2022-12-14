@@ -1,6 +1,8 @@
+<script setup></script>
+
 <template>
   <div class="page">
-    <router-view></router-view>
+    <router-view />
 
     <footer>
       2021 - 2022 © <a href="https://elliotmassen.com/">Elliot Massen</a>
@@ -8,8 +10,4 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
-}
-</script>
+<style scoped></style>
