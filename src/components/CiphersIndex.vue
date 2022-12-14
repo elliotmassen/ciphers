@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 label {
   display: inline-block;
   font-weight: 700;
